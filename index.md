@@ -4,8 +4,10 @@
 
 ### Education
 
-- 2020- : School of Computer Science at Beijing University of Posts and Telecommunications (BUPT)
-- 2017-2020 : Shenzhen Middle School
+- 2020 - now : student, School of Computer Science
+  at Beijing University of Posts and Telecommunications (BUPT)
+- 2017 - 2020 : student, Science Department, Standard Curriculum
+  at Shenzhen Middle School
 
 ### Blogs
 
