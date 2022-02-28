@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/faranten/faranten.github.i
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-这是行内公式$x^2$，下面是行间公式
+  这是行内公式$x^2$，下面是行间公式
 $$
 x^2y^2
 $$
