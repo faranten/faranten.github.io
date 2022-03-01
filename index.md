@@ -5,6 +5,7 @@
 
 ### Blogs
 
+- [2022-03-01 PRML 回归的线性模型](https://www.cnblogs.com/faranten/p/15947139.html)
 - [2022-02-21 PRML 概率分布](https://www.cnblogs.com/faranten/p/15917369.html)
 - [2022-02-10 PRML 基础知识](https://www.cnblogs.com/faranten/p/15880295.html)
 - [2022-02-05 矩阵分解的常见方法](https://www.cnblogs.com/faranten/p/15861531.html)
@@ -14,7 +15,7 @@
 ### Education Background
 
 - 2020.9 - now
-  - undergraduate, School of Computer Science
+  - undergraduate, School of Computer Science (National Pilot Software Engineering School)
   - Beijing University of Posts and Telecommunications (BUPT)
 - 2017.9 - 2020.9
   - student, Science Department, Standard Curriculum
