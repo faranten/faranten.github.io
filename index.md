@@ -5,12 +5,14 @@
 
 ### Blogs
 
-- [2022-03-01 PRML 回归的线性模型](https://www.cnblogs.com/faranten/p/15947139.html)
-- [2022-02-21 PRML 概率分布](https://www.cnblogs.com/faranten/p/15917369.html)
-- [2022-02-10 PRML 基础知识](https://www.cnblogs.com/faranten/p/15880295.html)
-- [2022-02-05 矩阵分解的常见方法](https://www.cnblogs.com/faranten/p/15861531.html)
-- [2022-02-04 矩阵函数的常见求法](https://www.cnblogs.com/faranten/p/15861327.html)
-- [2022-02-03 矩阵理论基础知识](https://www.cnblogs.com/faranten/p/15845928.html)
+- [2022 PRML 回归的线性模型](https://www.cnblogs.com/faranten/p/15947139.html)
+- [2022 PRML 概率分布](https://www.cnblogs.com/faranten/p/15917369.html)
+- [2022 PRML 基础知识](https://www.cnblogs.com/faranten/p/15880295.html)
+- [2022 矩阵理论基础知识](https://www.cnblogs.com/faranten/p/15845928.html)
+- [2022 矩阵函数的常见求法](https://www.cnblogs.com/faranten/p/15861327.html)
+- [2022 矩阵分解的常见方法](https://www.cnblogs.com/faranten/p/15861531.html)
+- [2022 矩阵微分](https://www.cnblogs.com/faranten/p/16028217.html)
+- [2022 计算机网络的物理层](https://www.cnblogs.com/faranten/p/16053852.html)
 
 ### Education Background
 
