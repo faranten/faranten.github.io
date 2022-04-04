@@ -13,6 +13,7 @@
 - [2022 矩阵分解的常见方法](https://www.cnblogs.com/faranten/p/15861531.html)
 - [2022 矩阵微分](https://www.cnblogs.com/faranten/p/16028217.html)
 - [2022 计算机网络的物理层](https://www.cnblogs.com/faranten/p/16053852.html)
+- [2022 二进制数的运算原理与门电路实现](https://www.cnblogs.com/faranten/p/16099916.html)
 
 ### Education Background
 
