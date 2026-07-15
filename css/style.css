@@ -141,7 +141,14 @@ body {
     line-height: 1.5;
     text-align: justify;
     hyphens: auto;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.biography-section p a {
+    hyphens: auto;
+    overflow-wrap: anywhere;
+    word-break: normal;
 }
 
 .publications-section {
