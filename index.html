@@ -38,7 +38,20 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >Google Scholar</a>
-
+                    <span class="separator" aria-hidden="true">·</span>
+                    <a
+                        class="contact-item scholar-link link"
+                        href="https://github.com/faranten/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >GitHub</a>
+                    <span class="separator" aria-hidden="true">·</span>
+                    <span class="contact-item link wechat-trigger">
+                        WeChat
+                        <span class="wechat-popup">
+                            <img src="asset/wechat.jpg" alt="WeChat QR code">
+                        </span>
+                    </span>
                     <span class="separator" aria-hidden="true">·</span>
                     <span class="contact-item">rongtianfu@bupt.edu.cn</span>
                     <span class="separator" aria-hidden="true">·</span>
@@ -82,170 +95,313 @@
                 <h2 class="section-header">Publications</h2>
 
                 <article class="publication-item">
-                    <h3>
-                        UltraGNN: A Sparse-Operator-Aware Framework for Accelerating Graph Neural Networks on Tensor Cores
-                    </h3>
-                    <div class="pub-details">
-                        <span class="pub-venue">TPDS 2026</span>
-                        <span class="separator" aria-hidden="true">·</span>
-                        Jinliang Shi, Shigang Li,
-                        <span class="ultrabold">Rongtian Fu</span>,
-                        Xueying Wang, Youxuan Xu, Tong Wu
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="powersparse-extra"
+                            >
+                                PowerSparse: GPU-Accelerated Node Aggregation and Edge Messaging for Natural Graphs
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[TPDS 2027]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://ieeexplore.ieee.org/abstract/document/11775001"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Shigang Li, Jinliang Shi, Xueying Wang, Zhi Ma, Tong Wu, Youxuan Xu
+                        </div>
                     </div>
-                    <div class="pub-details">
+                    <div class="pub-extra" id="powersparse-extra" hidden>
+                        <p>
+                            Graph representation learning is supported by node aggregation and edge messaging. The former aggregates embeddings from in-neighbors of a node. The latter operates on edges, generating edge-level messages through interaction between two endpoints. These two operations are executed by SpMM and SDDMM kernels at the underlying level. However, existing GPU optimizations on these kernels do not account for the power-law distribution, which is commonly observed in natural graphs. Specifically, the in-degree power-law causes severe load imbalance for node aggregation, and the data locality inherent in the out-degree power-law is not fully exploited. To this end, we propose PowerSparse, a novel GPU-accelerated node aggregation and edge messaging solution for natural graphs. Although load balancing and data locality are tightly coupled with each other and very difficult to optimize simultaneously, the methodology of PowerSparse makes it possible to achieve the best of both worlds. First, PowerSparse introduces multi-granularity segmentation with scheduling to ensure near-optimal load balancing with negligible atomic overhead. After the segmentation, PowerSparse utilizes hotness-aware tile sorting to improve data locality without damaging the load balance achieved previously. Moreover, through in-depth analysis, we reveal that CUDA-Core, rather than Tensor-Core, should be prioritized for SpMM and SDDMM on natural graphs. Extensive evaluations on 1,260 natural graphs show that PowerSparse achieves strong overall performance against state-of-the-art CUDA- and Tensor-Core methods across diverse configurations. On H100 at node embedding size 128, PowerSparse achieves average speedups of 1.80x and 2.32x over RoDe (the CUDA-Core SOTA) for SpMM and SDDMM, respectively; over FlashSparse (the Tensor-Core SOTA), the corresponding speedups are 1.12x and 2.03x. We further observe severe performance degradation in earlier Tensor-Core methods like TC-GNN and DTC-SpMM on power-law graphs, revealing a fundamental mismatch between rigid tensor-block execution and highly skewed sparsity. For end-to-end GNN performance, compared with DGL, PowerSparse achieves an average speedup of 1.06x for GCN and 2.83x for GAT. PowerSparse also achieves competitive performance on 3,846 non-power-law sparse matrices, showing its generality.
+                        </p>
                         <a
                             class="link"
-                            href="https://ieeexplore.ieee.org/abstract/document/11691052"
+                            href="https://github.com/ParCIS/PowerSparse"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Paper</a>
-                        <span class="separator" aria-hidden="true">·</span>
-                        <a
-                            class="link"
-                            href="https://github.com/ParCIS/UltraGNN"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Code</a>
+                        >(Access Source Code)</a>
                     </div>
                 </article>
 
                 <article class="publication-item">
-                    <h3>
-                        TwinCache: A Retrieval- and Reranking-Aware Caching System for Efficient RAG Serving
-                    </h3>
-                    <div class="pub-details">
-                        <span class="pub-venue">ATC 2026</span>
-                        <span class="separator" aria-hidden="true">·</span>
-                        Youxuan Xu,
-                        <span class="ultrabold">Rongtian Fu</span>,
-                        Jinliang Shi, Tong Wu, Zhi Ma, Shigang Li
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="twincache-extra"
+                            >
+                                TwinCache: A Retrieval- and Reranking-Aware Caching System for Efficient RAG Serving
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[ATC 2026]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://dl.acm.org/doi/10.1145/3828523.3857039"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            Youxuan Xu,
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Jinliang Shi, Tong Wu, Zhi Ma, Shigang Li
+                        </div>
                     </div>
-                    <!-- <div class="pub-details">
-                        <a
-                            class="link"
-                            href=""
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Paper Link</a>
-                        <span class="separator" aria-hidden="true">·</span>
+                    <div class="pub-extra" id="twincache-extra" hidden>
+                        <p>
+                            Retrieval-augmented generation (RAG) improves the factuality of large language models (LLMs) by grounding responses in external knowledge, but introduces substantial pre-generation latency. We observe that both database retrieval and neural reranking can dominate time-to-first-token (TTFT) under different serving configurations, while related queries exhibit cross-query locality in retrieved chunks and high-ranked evidence after reranking. However, existing optimizations typically target retrieval or reranking in isolation, leaving this locality underexploited across the two stages. To this end, we present TwinCache, a retrieval- and reranking-aware caching system that exploits cross-query locality to jointly accelerate both stages of RAG serving. TwinCache organizes historical queries and retrieved chunks into locality-aware cache regions and constructs a compact, high-utility candidate set for each incoming query using nearest-query evidence, historical reranking feedback, and current-query similarity. This avoids expensive database retrieval on validated cache hits while reducing the number of chunks submitted to the reranker. To further reduce pre-generation latency, TwinCache introduces priority-guided reranking, which processes high-priority chunks first, overlaps subsequent reranking with LLM chunked prefill, and stops once the leading evidence chunks stabilize. TwinCache also mitigates potential false cache hits through online validation and refreshes cache regions during low-load periods using online feedback. Across diverse serving loads, TwinCache achieves up to 2.44x the serving throughput of a vLLM-based RAG system while maintaining response quality comparable to standard RAG.
+                        </p>
                         <a
                             class="link"
                             href="https://github.com/ParCIS/TwinCache"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Source Code</a>
-                    </div> -->
+                        >(Access Source Code)</a>
+                    </div>
                 </article>
 
                 <article class="publication-item">
-                    <h3>
-                        MX-KMeans: Accelerating K-Means Clustering through Microscaling Quantization
-                    </h3>
-                    <div class="pub-details">
-                        <span class="pub-venue">ICPP 2026</span>
-                        <span class="separator" aria-hidden="true">·</span>
-                        <span class="ultrabold">Rongtian Fu</span>,
-                        Dongbo Lv, Xueying Wang, Shigang Li
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="ultragnn-extra"
+                            >
+                                UltraGNN: A Sparse-Operator-Aware Framework for Accelerating Graph Neural Networks on Tensor Cores
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[TPDS 2026]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://ieeexplore.ieee.org/abstract/document/11691052"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            Jinliang Shi, Shigang Li,
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Xueying Wang, Youxuan Xu, Tong Wu
+                        </div>
                     </div>
-                    <div class="pub-details">
+                    <div class="pub-extra" id="ultragnn-extra" hidden>
+                        <p>
+                            Graph Neural Networks (GNNs) have achieved widespread success from social networks to AI-for-Science. Most existing GNN frameworks adopt scatter-first (edge-centric) or gather-first (vertex-centric) scheduling paradigms for message passing. However, these paradigms are closely tied to traditional CUDA-core execution model in terms of data access patterns, scheduling granularity, and compute mapping, limiting their ability to fully leverage the superior matrix computation capabilities of Tensor Core Units (TCUs) on modern GPUs. To this end, we propose UltraGNN, the first sparse-operator-aware framework designed to efficiently accelerate both topology-driven and dynamic-weight GNN models on TCUs. UltraGNN introduces a novel subgraph-centric scheduling paradigm, which reformulates message generation and aggregation as TCU-friendly sparse matrix multiplications. To enable efficient support for dynamic-weight GNN architectures on TCUs, UltraGNN incorporates a transpose-friendly sparse storage format explicitly designed to facilitate fast gradient computation and memory-efficient training and inference. UltraGNN adopts PyTorch as its frontend, delivering an out-of-the-box user experience. Extensive experimental results on the H100 and RTX 4090 GPUs demonstrate that UltraGNN sets a new state-of-the-art in GNN acceleration, achieving geometric mean speedups of 2.47x and 5.46x over DGL on GAT and GATv2 models, respectively.
+                        </p>
                         <a
                             class="link"
-                            href="https://dl.acm.org/doi/10.1145/3832810.3832837"
+                            href="https://github.com/ParCIS/UltraGNN"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Paper</a>
-                        <span class="separator" aria-hidden="true">·</span>
+                        >(Access Source Code)</a>
+                    </div>
+                </article>
+
+                <article class="publication-item">
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="c3ft-extra"
+                            >
+                                C3FT: Computation-Centric Checkpointing for Distributed Large Model Training
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[APPT 2026]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://link.springer.com/chapter/10.1007/978-981-92-4805-6_18"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            Yonghua Huang, Baodong Wu, Shigang Li, Jiahao Ding,
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Qingping Li, Boxun Li, Zhenhua Zhu, Yu Wang
+                        </div>
+                    </div>
+                    <div class="pub-extra" id="c3ft-extra" hidden>
+                        <p>
+                            With the continuous growth of deep learning model sizes, their training processes face significant challenges in fault tolerance efficiency. Existing solutions, however, struggle to deliver both low communication overhead and effective fault tolerance. This paper presents C3FT, a Computation-Centric Checkpointing scheme for efficient Fault Tolerance of distributed large model training. Specifically, C3FT utilizes the CPU resources to update the optimizer states, and then uses the optimizer states on CPU as the checkpoints. Therefore, updating the optimizer states (including the model parameters) automatically updates the checkpoints on CPU, which also avoids the costly communication overhead in existing fault tolerance solutions. Overall, C3FT achieves the high efficiency of fault tolerance and communication simultaneously. Evaluation results show that when training a 70B model on 32 A100 GPUs (4 nodes x 8 cards), C3FT improves the training throughput by 1.69x compared to Gemini (the SOTA solution with in-CPU-memory checkpointing).
+                        </p>
+                    </div>
+                </article>
+
+                <article class="publication-item">
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="mx-kmeans-extra"
+                            >
+                                MX-KMeans: Accelerating K-Means Clustering through Microscaling Quantization
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[ICPP 2026]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://dl.acm.org/doi/10.1145/3832810.3832837"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Dongbo Lv, Xueying Wang, Shigang Li
+                        </div>
+                    </div>
+                    <div class="pub-extra" id="mx-kmeans-extra" hidden>
+                        <p>
+                            K-Means clustering is a classical unsupervised learning method widely used for its simplicity, efficiency, and broad applicability. In this work, we first analyze the numerical distributions of representative K-Means datasets and identify an opportunity for low-precision acceleration through hardware-native microscaling formats. Based on this observation, we propose MX-KMeans, a high-performance K-Means solution that accelerates clustering with precision-adaptive microscaling quantization. In practice, our MX-KMeans assigns different low-precision formats to data points in a pointwise manner according to their tolerance for quantization error: points well inside a cluster can use extremely low precision, while boundary points are protected with higher precision. The dominant point-to-centroid distance computation is then executed as mixed-precision GEMM, where NVIDIA Blackwell Tensor Cores directly consume microscaled low-precision values and their scaling factors without explicit dequantization overhead. Furthermore, MX-KMeans can be extended beyond standard Lloyd-style K-Means by reformulating pruning-based variants, including Elkan, Hamerly, and Yinyang, as a unified masked distance computation and further lowering it to Tensor-Core-friendly dense GEMM operations. Extensive experiments on an NVIDIA RTX 5090 GPU show that MX-KMeans achieves up to 4.08x and 75.82x end-to-end speedups over industry-standard cuML and FAISS, respectively, while preserving the clustering quality of high-precision baselines.
+                        </p>
                         <a
                             class="link"
                             href="https://github.com/ParCIS/MX-KMeans"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Code</a>
+                        >(Access Source Code)</a>
                     </div>
                 </article>
 
                 <article class="publication-item">
-                    <h3>
-                        Omnia: Efficient RAG Serving through Speculative Scheduling
-                    </h3>
-                    <div class="pub-details">
-                        <span class="pub-venue">HPDC 2026</span>
-                        <span class="separator" aria-hidden="true">·</span>
-                        <span class="ultrabold">Rongtian Fu</span>,
-                        Shigang Li, Youxuan Xu, Tong Wu, Zhi Ma, Jinliang Shi
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="omnia-extra"
+                            >
+                                Omnia: Efficient RAG Serving through Speculative Scheduling
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[HPDC 2026]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://dl.acm.org/doi/10.1145/3806645.3807814"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Shigang Li, Youxuan Xu, Tong Wu, Zhi Ma, Jinliang Shi
+                        </div>
                     </div>
-                    <div class="pub-details">
-                        <a
-                            class="link"
-                            href="https://dl.acm.org/doi/10.1145/3806645.3807814"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Paper</a>
-                        <span class="separator" aria-hidden="true">·</span>
+                    <div class="pub-extra" id="omnia-extra" hidden>
+                        <p>
+                            Retrieval-Augmented Generation (RAG) has emerged for enhancing Large Language Models (LLMs) by improving factual accuracy and mitigating hallucinations. A typical RAG pipeline executes in three cascaded stages: retrieval, reranking, and generation. The existing serving systems suffer from two critical system-level bottlenecks when applying to RAG serving: the first is the cumulative latency caused by rigid sequential dependencies between reranking and generation, and the second is the system saturation triggered by bursty, high fan-in reranking workloads. In this paper, we propose Omnia, an efficient distributed system designed to push the throughput-latency frontier of RAG serving. Omnia introduces chunk speculation, a two-level (coarse-to-fine) reranking architecture that enables early-termination through chunk pruning and masks reranking latency via progressive prefilling. To further improve the execution efficiency of chunk speculation, we develop backpressure-aware reranker scheduling (BARS). By monitoring concurrent client counts and real-time KV cache occupancy, BARS dynamically modulates the speculation interval to batch compute-bound prefilling with memory-bound decoding. We implement Omnia as a backend-agnostic framework, supporting vLLM, SGLang, and TensorRT-LLM. Evaluation demonstrates that Omnia maintains near-lossless accuracy while optimizing both the system-level throughput and client-level latency. Compared to existing systems, Omnia increases the maximum request rate the system can handle by 57%. The end-to-end response latency for a client is reduced by averagely 2.99x (up to 9.84x). We foresee Omnia will form a new paradigm for efficient RAG serving.
+                        </p>
                         <a
                             class="link"
                             href="https://github.com/ParCIS/Omnia"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Code</a>
+                        >(Access Source Code)</a>
                     </div>
                 </article>
 
                 <article class="publication-item">
-                    <h3>
-                        Dynamo-MoE: Accelerating Sparse Large Model Inference
-                        with Dynamic Parallelization
-                    </h3>
-                    <div class="pub-details">
-                        <span class="pub-venue">HPDC 2026</span>
-                        <span class="separator" aria-hidden="true">·</span>
-                        Jiahao Chen, Shigang Li,
-                        <span class="ultrabold">Rongtian Fu</span>,
-                        Tong Wu, Zhi Ma, Jingkun Dong
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="dynamo-moe-extra"
+                            >
+                                Dynamo-MoE: Accelerating Sparse Large Model Inference with Dynamic Parallelization
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[HPDC 2026]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://dl.acm.org/doi/10.1145/3806645.3807820"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            Jiahao Chen, Shigang Li,
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Tong Wu, Zhi Ma, Jingkun Dong
+                        </div>
                     </div>
-                    <div class="pub-details">
-                        <a
-                            class="link"
-                            href="https://dl.acm.org/doi/10.1145/3806645.3807820"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Paper</a>
-                        <span class="separator" aria-hidden="true">·</span>
+                    <div class="pub-extra" id="dynamo-moe-extra" hidden>
+                        <p>
+                            Mixtral-of-Experts (MoE) has become one of the major model structures in LLMs because of its computational efficiency when scaling the model size. However, MoE model inference suffers from critical load imbalance issue caused by the sparsely and dynamically activated experts. In addition, current inference frameworks are oblivious to the real-time workload fluctuation, a common phenomenon in LLM serving. Therefore, the static model deployment of existing frameworks leads to severe performance limitations. To this end, we propose Dynamo-MoE, an out-of-box MoE inference framework to bridge the performance gap by dynamic parallelization strategies. Specifically, Dynamo-MoE integrates a novel load balancing approach based on token sorting and on-demand expert loading to solve the workload imbalance issue in the scenario of high workload (such as Prefill). Dynamo-MoE is also aware of workload varying to adaptively switch between tensor parallelism (for low latency in small batch scenarios) and expert parallelism (for high throughput in large batch scenarios). Furthermore, the model parameter redistribution overhead of dynamic parallelization is smartly overlapped through sophisticated pipeline orchestration. Compared to the SOTA framework vLLM (w/ and w/o EPLB), Dynamo-MoE achieves up to 6.75x reduction for TTFT, 1.59x reduction for TPOT, and 1.5x improvement for throughput.
+                        </p>
                         <a
                             class="link"
                             href="https://github.com/ParCIS/Dynamo-MoE"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Code</a>
+                        >(Access Source Code)</a>
                     </div>
                 </article>
 
                 <article class="publication-item">
-                    <h3>
-                        FlashSparse: Minimizing Computation Redundancy for Fast
-                        Sparse Matrix Multiplications on Tensor Cores
-                    </h3>
-                    <div class="pub-details">
-                        <span class="pub-venue">PPoPP 2025</span>
-                        <span class="separator" aria-hidden="true">·</span>
-                        Jinliang Shi, Shigang Li, Youxuan Xu,
-                        <span class="ultrabold">Rongtian Fu</span>,
-                        Xueying Wang, Tong Wu
+                    <div class="pub-summary">
+                        <h3>
+                            <button
+                                class="pub-toggle"
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="flashsparse-extra"
+                            >
+                                FlashSparse: Minimizing Computation Redundancy for Fast Sparse Matrix Multiplications on Tensor Cores
+                            </button>
+                        </h3>
+                        <div class="pub-details">
+                            <span class="pub-venue">[PPoPP 2025]</span>
+                            <span class="separator" aria-hidden="true">·</span>
+                            <a
+                                class="link"
+                                href="https://dl.acm.org/doi/10.1145/3710848.3710858"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Link</a>
+                            <span class="separator" aria-hidden="true">·</span>
+                            Jinliang Shi, Shigang Li, Youxuan Xu,
+                            <span class="ultrabold">Rongtian Fu</span>,
+                            Xueying Wang, Tong Wu
+                        </div>
                     </div>
-                    <div class="pub-details">
-                        <a
-                            class="link"
-                            href="https://dl.acm.org/doi/10.1145/3710848.3710858"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >Paper</a>
-                        <span class="separator" aria-hidden="true">·</span>
+                    <div class="pub-extra" id="flashsparse-extra" hidden>
+                        <p>
+                            Sparse Matrix-matrix Multiplication (SpMM) and Sampled Dense-dense Matrix Multiplication (SDDMM) are important sparse operators in scientific computing and deep learning. Tensor Core Units (TCUs) enhance modern accelerators with superior computing power, which is promising to boost the performance of matrix operators to a higher level. However, due to the irregularity of unstructured sparse data, it is difficult to deliver practical speedups on TCUs. To this end, we propose FlashSparse, a novel approach to bridge the gap between sparse workloads and the TCU architecture. Specifically, FlashSparse minimizes the sparse granularity for SpMM and SDDMM on TCUs through a novel swap-and-transpose matrix multiplication strategy. Benefiting from the minimum sparse granularity, the computation redundancy is remarkably reduced while the computing power of TCUs is fully utilized. Besides, FlashSparse is equipped with a memory-efficient thread mapping strategy for coalesced data access and a sparse matrix storage format to save memory footprint. Extensive experimental results on H100 and RTX 4090 GPUs show that FlashSparse sets a new state-of-the-art for sparse matrix multiplications (geometric mean 5.5x speedup over DTC-SpMM and 3.22x speedup over RoDe).
+                        </p>
                         <a
                             class="link"
                             href="https://github.com/ParCIS/FlashSparse"
                             target="_blank"
                             rel="noopener noreferrer"
-                        >Code</a>
+                        >(Access Source Code)</a>
                     </div>
                 </article>
             </section>
@@ -253,5 +409,28 @@
 
     </div>
 </div>
+    <script>
+        // Keep the click target inside the original title and metadata area.
+        document.addEventListener("click", function (event) {
+            const summary = event.target.closest(".pub-summary");
+
+            // Only the title and metadata area toggles; links navigate normally.
+            if (!summary || event.target.closest("a")) return;
+
+            const article = summary.closest(".publication-item");
+
+            // Allow readers to select and copy text without toggling the abstract.
+            const selection = window.getSelection();
+            if (selection && !selection.isCollapsed) return;
+
+            const abstract = article.querySelector(".pub-extra");
+            const button = article.querySelector(".pub-toggle");
+            if (!abstract || !button) return;
+
+            const expanded = abstract.hidden;
+            abstract.hidden = !expanded;
+            button.setAttribute("aria-expanded", String(expanded));
+        });
+    </script>
 </body>
 </html>

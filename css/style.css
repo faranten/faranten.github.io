@@ -30,7 +30,6 @@ body {
 
 .profile-header {
     --profile-height: clamp(170px, 12vw, 220px);
-
     display: flex;
     align-items: center;
     width: max-content;
@@ -137,7 +136,7 @@ body {
 
 .biography-section p {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     text-align: justify;
     hyphens: auto;
@@ -155,22 +154,80 @@ body {
     margin-top: 2rem;
 }
 
+/* The abstract remains outside the hover and click area. */
 .publication-item {
     width: 100%;
+    margin: 0.25rem 0;
+    padding: 0;
+    cursor: default;
+}
+
+/* This area keeps its original size when the abstract is expanded. */
+.pub-summary {
+    width: calc(100% + 1.5rem);
+    margin: 0 -0.75rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.pub-summary:hover {
+    background-color: #f0f0f0;
 }
 
 .publication-item h3 {
-    margin: 1.5rem 0 0.3rem;
-    font-size: 1.4rem;
+    margin: 0 0 0.3rem;
+    font-size: 1.35rem;
     font-weight: 800;
     line-height: 1.35;
     overflow-wrap: break-word;
 }
 
 .pub-details {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.5;
     overflow-wrap: break-word;
+}
+
+/* Keep native keyboard access without changing the title's appearance. */
+.pub-toggle {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+.pub-toggle:focus-visible {
+    outline: 2px solid var(--main-color);
+    outline-offset: 4px;
+}
+
+/* Show only the abstract when a paper is expanded. */
+.pub-extra {
+    margin-top: 0.1rem;
+    background: transparent;
+    cursor: text;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.pub-extra[hidden] {
+    display: none !important;
+}
+
+.pub-extra p {
+    margin: 0;
 }
 
 .ultrabold {
@@ -180,7 +237,6 @@ body {
 }
 
 .pub-venue {
-    font-style: italic;
     font-weight: 800;
     -webkit-text-stroke: 0.2px currentColor;
 }
@@ -203,10 +259,38 @@ body {
     background-size: 4px 3px;
 }
 
+.wechat-trigger {
+    position: relative;
+    cursor: pointer;
+}
+
+.wechat-popup {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10px;
+    z-index: 1000;
+}
+
+.wechat-popup img {
+    display: block;
+    width: 180px;
+    height: auto;
+    padding: 8px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.wechat-trigger:hover .wechat-popup {
+    display: block;
+}
+
 @media screen and (max-width: 600px) {
     .profile-header {
         --profile-height: clamp(170px, 52vw, 220px);
-
         flex-direction: column;
         width: 100%;
         gap: 1.5rem;
